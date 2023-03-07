@@ -78,4 +78,5 @@ inquirer
         break;
     }
     console.log(userShape);
+    console.log(userShape.render())
   });
