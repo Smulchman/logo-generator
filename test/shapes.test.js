@@ -10,25 +10,29 @@ describe("Shapes", () => {
       const newShape = new Shape();
       expect(newShape).toBeInstanceOf(Shape);
     });
-    it('should have a text value of "yes"', () => {
-      const newShape = new Shape("yes");
-      expect(newShape.text).toBe("yes");
+    it('should have a text value of "shape"', () => {
+      const newShape = new Shape("shape");
+      expect(newShape.text).toBe("shape");
     });
-    it('should have a color value of "yes"', () => {
-      const newShape = new Shape("yes", "yes");
-      expect(newShape.color).toBe("yes");
+    it('should have a color value of "red"', () => {
+      const newShape = new Shape("shape", "red");
+      expect(newShape.color).toBe("red");
+    });
+    it('should throw an error when render is called', () => {
+      const newShape = new Shape();
+      expect(newShape.render).toThrow();
     });
     it("should be an instance of the Shape class", () => {
       const newTriangle = new Triangle();
       expect(newTriangle).toBeInstanceOf(Triangle);
     });
-    it('should have a color value of "yes"', () => {
+    it('should have a text value of "triangle"', () => {
       const newTriangle = new Triangle("triangle");
       expect(newTriangle.text).toBe("triangle");
     });
-    it('should have a color value of "yes"', () => {
-      const newTriangle = new Triangle("triangle", "triangle");
-      expect(newTriangle.color).toBe("triangle");
+    it('should have a color value of "orange"', () => {
+      const newTriangle = new Triangle("triangle", "orange");
+      expect(newTriangle.color).toBe("orange");
     });
     it("should be an instance of the Circle class", () => {
       const newCircle = new Circle();
