@@ -6,7 +6,7 @@
   "directories": {
     "example": "examples",
     "lib": "lib",
-    "test": "jest"
+    "test": "test"
   },
   "scripts": {
     "test": "jest"
