@@ -33,6 +33,10 @@ describe("Shapes", () => {
     });
     it("should be an instance of the Shape class", () => {
       const newTriangle = new Triangle();
+      expect(newTriangle).toBeInstanceOf(Shape);
+    });
+    it("should be an instance of the Triangle class", () => {
+      const newTriangle = new Triangle();
       expect(newTriangle).toBeInstanceOf(Triangle);
     });
     it('should have a text value of "triangle"', () => {
@@ -43,6 +47,10 @@ describe("Shapes", () => {
       const newTriangle = new Triangle("triangle", "orange");
       expect(newTriangle.color).toBe("orange");
     });
+    it("should be an instance of the Shape class", () => {
+      const newCircle = new Circle();
+      expect(newCircle).toBeInstanceOf(Shape);
+    });
     it("should be an instance of the Circle class", () => {
       const newCircle = new Circle();
       expect(newCircle).toBeInstanceOf(Circle);
@@ -50,6 +58,10 @@ describe("Shapes", () => {
     it("should have the proper SVG value", () => {
       const newCircle = new Circle("test", "white", "red");
       expect(newCircle.render()).toEqual(testCircle);
+    });
+    it("should be an instance of the Shape class", () => {
+      const newSquare = new Square();
+      expect(newSquare).toBeInstanceOf(Shape);
     });
     it("should be an instance of the Square class", () => {
       const newSquare = new Square();

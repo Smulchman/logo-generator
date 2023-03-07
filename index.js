@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
 inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt);
+const fs = require('fs');
 
 const Shape = require("./lib/Shape");
 const Triangle = require("./lib/Triangle");
@@ -37,7 +38,7 @@ inquirer
     },
     {
       type: "input",
-      message: "Enter a color for for the text:",
+      message: "Enter a color for for the text (hexcode or appropriate keyword acceptable):",
       name: "color",
     },
     {
@@ -48,7 +49,7 @@ inquirer
     },
     {
       type: "input",
-      message: "Enter a color for the shape:",
+      message: "Enter a color for the shape (hexcode or appropriate keyword acceptable):",
       name: "backgroundColor",
     },
   ])
@@ -79,4 +80,9 @@ inquirer
     }
     console.log(userShape);
     console.log(userShape.render())
-  });
+  })
+  .then(() => {writeToFile("newSVG.svg", userShape.render())});
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => err ? console.log(err): console.log("Success!"));
+}
