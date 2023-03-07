@@ -6,17 +6,18 @@
   "directories": {
     "example": "examples",
     "lib": "lib",
-    "test": "test"
+    "test": "jest"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "inquirer": "^8.2.4",
     "inquirer-maxlength-input-prompt": "^1.0.2",
-    "jest": "^29.5.0"
+    "jest": "^24.9.0"
   }
 }
