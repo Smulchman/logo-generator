@@ -11,6 +11,7 @@ var testCircle = `<svg version="1.1" width="300" height="200" xmlns="http://www.
 
 </svg>`;
 
+
 describe("Shapes", () => {
   // this tests to see if the object is a a shape
   describe("instantiate", () => {
