@@ -4,16 +4,31 @@ const Triangle = require("../lib/Triangle");
 const Circle = require("../lib/Circle");
 const Square = require("../lib/Square");
 
-// I've defined this variable up here to keep the formatting within the actual tests simple and consistent.
-// This variable is what the svg text should be in the example that is built below to be tested.
+// I've defined these variables up here to keep the formatting within the actual tests simple and consistent.
+// The variables are what the svg text should be in the examples that built below in the tests.
 var testCircle = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
 
 <circle cx="150" cy="100" r="80" fill="red" />
 
-<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">test</text>
+<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">tst</text>
 
 </svg>`;
 
+var testTriangle = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+<polygon points="0,200 300,200 150,0" fill="green" />
+
+<text x="150" y="150" font-size="60" text-anchor="middle" fill="white">tst</text>
+
+</svg>`;
+
+var testSquare = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+<rect x="50" y="0" width="200" height="200" fill="blue" />
+
+<text x="150" y="125" font-size="60" text-anchor="middle" fill="white">tst</text>
+
+</svg>`;
 
 describe("Shapes", () => {
   // This section is to test that objects are being created correctly according to their class.
@@ -68,11 +83,6 @@ describe("Shapes", () => {
       const newCircle = new Circle();
       expect(newCircle).toBeInstanceOf(Circle);
     });
-    // Tests to see if our newCircle render method is returning the expected value
-    it("should have the proper SVG value", () => {
-      const newCircle = new Circle("test", "white", "red");
-      expect(newCircle.render()).toEqual(testCircle);
-    });
     // Tests to see if our newSquare is a Shape object
     it("should be an instance of the Shape class", () => {
       const newSquare = new Square();
@@ -82,6 +92,22 @@ describe("Shapes", () => {
     it("should be an instance of the Square class", () => {
       const newSquare = new Square();
       expect(newSquare).toBeInstanceOf(Square);
+    });
+  });
+  describe("render", () => {
+    // Tests to see if our render methods are returning the expected value
+    // The expected svg text is defined before any of the tests are defined
+    it("should have the proper SVG value", () => {
+      const newCircle = new Circle("tst", "white", "red");
+      expect(newCircle.render()).toEqual(testCircle);
+    });
+    it("should have the proper SVG value", () => {
+      const newTriangle = new Triangle("tst", "white", "green");
+      expect(newTriangle.render()).toEqual(testTriangle);
+    });
+    it("should have the proper SVG value", () => {
+      const newSquare = new Square("tst", "white", "blue");
+      expect(newSquare.render()).toEqual(testSquare);
     });
   });
 });
