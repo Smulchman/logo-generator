@@ -81,8 +81,8 @@ inquirer
     console.log(userShape);
     console.log(userShape.render())
   })
-  .then(() => {writeToFile("newSVG.svg", userShape.render())});
+  .then(() => {writeToFile("logo.svg", userShape.render())});
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => err ? console.log(err): console.log("Success!"));
+    fs.writeFile(fileName, data, err => err ? console.log(err): console.log("Generated logo.svg"));
 }
